@@ -370,7 +370,7 @@ function FilterBar({
       <select
         value={selectedTrail}
         onChange={(e) => onTrailChange(e.target.value)}
-        className="bg-[#F7F5EF] border border-[#E3DFD3] text-[#1C211D] text-sm rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#12805F]/40 cursor-pointer min-w-[160px]"
+        className="bg-[#F7F5EF] border border-[#E3DFD3] text-[#1C211D] text-sm rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#12805F]/40 cursor-pointer min-w-40"
       >
         <option value="all">Semua Bukit/Gunung</option>
         {trailOptions.map((t) => (
@@ -402,7 +402,7 @@ function FilterBar({
 const MapPanel = dynamic(() => import("@/components/dashboardmap"), {
   ssr: false,
   loading: () => (
-    <div className="flex-1 min-h-[420px] bg-[#FDFCF9] border border-[#E3DFD3] rounded-xl flex items-center justify-center">
+    <div className="flex-1 min-h-105 bg-[#FDFCF9] border border-[#E3DFD3] rounded-xl flex items-center justify-center">
       <span className="text-sm text-[#6E7568]">Memuatkan peta…</span>
     </div>
   ),
@@ -420,7 +420,7 @@ function AlertTicker({ alerts: items }: { alerts: AlertItem[] }) {
           Log Alert ({items.length})
         </span>
       </div>
-      <div className="flex-1 max-h-[300px] overflow-y-auto divide-y divide-[#E3DFD3]">
+      <div className="flex-1 max-h-75 overflow-y-auto divide-y divide-[#E3DFD3]">
         {items.length === 0 && (
           <div className="px-4 py-6 text-sm text-[#6E7568] text-center">
             Tiada alert untuk penapis ini
@@ -555,7 +555,7 @@ function ActiveTripsTable({ trips: items }: { trips: TripStatus[] }) {
                     {severityLabel(t.status)}
                   </span>
                 </td>
-                <td className="px-4 py-3 min-w-[140px]">
+                <td className="px-4 py-3 min-w-35">
                   <div className="flex items-center gap-2">
                     <div className="flex-1 h-1.5 rounded-full bg-[#E3DFD3] overflow-hidden">
                       <div

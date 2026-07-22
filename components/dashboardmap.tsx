@@ -93,7 +93,7 @@ export default function DashboardMap({
       : [{ lat: 4.2105, lng: 108.9758 }];
 
   return (
-    <div className="relative flex-1 min-h-[420px] bg-[#FDFCF9] border border-[#E3DFD3] rounded-xl overflow-hidden">
+    <div className="relative flex-1 min-h-105 bg-[#FDFCF9] border border-[#E3DFD3] rounded-xl overflow-hidden">
       <MapContainer
         center={[4.2105, 108.9758]}
         zoom={6}
@@ -165,13 +165,13 @@ export default function DashboardMap({
 
       {/* label penapis */}
       {filterLabel && (
-        <span className="absolute top-3 left-3 z-[1000] text-xs font-mono text-[#12805F] bg-white/95 border border-[#E3DFD3] rounded-full px-3 py-1 shadow-sm">
+        <span className="absolute top-3 left-3 z-1000 text-xs font-mono text-[#12805F] bg-white/95 border border-[#E3DFD3] rounded-full px-3 py-1 shadow-sm">
           Menapis: {filterLabel}
         </span>
       )}
 
       {/* legend */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-[1000] flex items-center gap-4 bg-[#FFFFFF]/95 border border-[#E3DFD3] rounded-full px-4 py-2 text-xs text-[#6E7568] shadow-sm">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-1000 flex items-center gap-4 bg-[#FFFFFF]/95 border border-[#E3DFD3] rounded-full px-4 py-2 text-xs text-[#6E7568] shadow-sm">
         <span className="flex items-center gap-1.5">
           <span className="h-2 w-2 rounded-full bg-[#12805F]" /> Laluan
         </span>

@@ -181,7 +181,7 @@ function StatCard({
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
-      className="flex-1 min-w-[160px] rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+      className="flex-1 min-w-40 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
     >
       <div className="flex items-center justify-between">
         <span className="text-xs font-medium uppercase tracking-wide text-slate-500">
@@ -365,7 +365,7 @@ export default function CoveragePage() {
 
         {/* Map + legend */}
         <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-          <div className="h-[420px] w-full">
+          <div className="h-105 w-full">
             <MapContainer
               key={`${negeriFilter}-${gunungFilter}`}
               center={mapCenter}
@@ -476,7 +476,7 @@ export default function CoveragePage() {
                   className="flex items-start gap-3 px-4 py-3"
                 >
                   <span
-                    className={`mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full ring-1 ${
+                    className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full ring-1 ${
                       z.severity === "none" ? "bg-rose-50 ring-rose-200" : "bg-amber-50 ring-amber-200"
                     }`}
                   >
@@ -521,7 +521,7 @@ export default function CoveragePage() {
             </span>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[720px] text-left text-sm">
+            <table className="w-full min-w-180 text-left text-sm">
               <thead>
                 <tr className="border-b border-slate-100 text-xs uppercase tracking-wide text-slate-400">
                   <th className="px-4 py-2 font-medium">ID</th>

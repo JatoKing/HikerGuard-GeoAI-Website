@@ -314,7 +314,7 @@ export default function HeroSection() {
           are both purely a CSS transform: translateY, which is
           GPU-composited and never touches layout or the canvas. */}
       <div
-        className={`absolute inset-0 h-full w-full transition-transform duration-[2200ms] ease-in-out ${
+        className={`absolute inset-0 h-full w-full transition-transform duration-2200 ease-in-out ${
           loginOpen ? 'translate-y-0' : 'translate-y-[42%]'
         }`}
       >
@@ -327,7 +327,7 @@ export default function HeroSection() {
           loginOpen ? '-translate-y-10 opacity-0' : 'translate-y-0 opacity-100'
         }`}
       >
-        <span className="mb-[18px] text-xs tracking-wide" style={{ color: '#9497A0' }}>
+        <span className="mb-4.5 text-xs tracking-wide" style={{ color: '#9497A0' }}>
           Off-grid tracking for private search &amp; rescue.
         </span>
 
@@ -344,7 +344,7 @@ export default function HeroSection() {
           type="button"
           onClick={handleOpenLogin}
           disabled={loginOpen}
-          className={`group relative mt-[22px] overflow-hidden rounded-full p-px ${
+          className={`group relative mt-5.5 overflow-hidden rounded-full p-px ${
             loginOpen ? 'pointer-events-none' : 'pointer-events-auto cursor-pointer'
           }`}
         >
@@ -423,7 +423,7 @@ export default function HeroSection() {
                 Irregular/organic paths (not perfect circles) to read
                 as elevation contours rather than sonar rings. */}
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-15">
-              <svg viewBox="0 0 200 200" className="h-[420px] w-[420px] shrink-0">
+              <svg viewBox="0 0 200 200" className="h-105 w-105 shrink-0">
                 <path
                   d="M96,8 C130,6 158,20 176,48 C194,76 196,118 180,150 C164,182 128,196 92,190 C56,184 26,160 14,126 C2,92 8,54 34,32 C50,18 72,10 96,8 Z"
                   stroke="#39FF88"
