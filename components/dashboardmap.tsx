@@ -100,9 +100,17 @@ export default function DashboardMap({
         scrollWheelZoom
         style={{ height: "100%", width: "100%", minHeight: 420 }}
       >
+        {/*
+          OpenTopoMap — tile layer khusus terrain/topografi.
+          Tunjuk contour lines, shading bukit/gunung dan trail hiking,
+          jadi lebih sesuai untuk dashboard pendaki berbanding tile OSM biasa.
+          maxZoom OpenTopoMap ialah 17 (bukan 19 macam OSM standard) —
+          kalau tak dihadkan, tile akan jadi kosong/blank pada zoom tinggi.
+        */}
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+          url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+          maxZoom={17}
         />
         <FitBounds points={boundsPoints} />
 

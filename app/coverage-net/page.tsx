@@ -149,10 +149,13 @@ const CRITICAL_ZONES: CriticalZone[] = [
 
 const NEGERI_LIST = Array.from(new Set(TOWERS.map((t) => t.negeri))).sort();
 
-const STATUS_META: Record<
-  SignalStatus,
-  { label: string; color: string; ring: string; text: string; icon: typeof SignalHigh }
-> = {
+const STATUS_META: Record<SignalStatus, {
+  label: string;
+  color: string;
+  ring: string;
+  text: string;
+  icon: typeof SignalHigh;
+}> = {
   good: { label: "Baik", color: "#0d9488", ring: "ring-teal-200", text: "text-teal-700", icon: SignalHigh },
   weak: { label: "Lemah", color: "#d97706", ring: "ring-amber-200", text: "text-amber-700", icon: SignalLow },
   none: { label: "Tiada", color: "#e11d48", ring: "ring-rose-200", text: "text-rose-700", icon: SignalZero },
@@ -370,9 +373,18 @@ export default function CoveragePage() {
               scrollWheelZoom={false}
               style={{ height: "100%", width: "100%" }}
             >
+              {/*
+                CartoDB Voyager — tile layer minimal/bersih berbanding OSM standard.
+                Latar lebih senyap (grey/pale) supaya bulatan radius liputan
+                (merah/kuning/hijau) dan marker status menara lebih menonjol,
+                sambil masih ada label jalan/bandar untuk konteks lokasi.
+                maxZoom 20 ikut had CartoDB basemap.
+              */}
               <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+                subdomains="abcd"
+                maxZoom={20}
               />
               {filteredTowers.map((t) => (
                 <span key={t.id}>

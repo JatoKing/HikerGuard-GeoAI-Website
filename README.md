@@ -36,7 +36,12 @@ Buka [http://localhost:3000](http://localhost:3000) di browser. Mula di `/` untu
 
 ## Stack
 
-Next.js (App Router) + TypeScript + Tailwind CSS + framer-motion + lucide-react, MapLibre GL JS (globe di landing page) dan Leaflet/react-leaflet (peta dashboard + coverage-net, tile OpenStreetMap — percuma, tiada API key). Kedua-dua library peta memerlukan sambungan internet untuk muat turun tile.
+Next.js (App Router) + TypeScript + Tailwind CSS + framer-motion + lucide-react, MapLibre GL JS (globe di landing page) dan Leaflet/react-leaflet (peta dashboard + coverage-net — percuma, tiada API key). Kedua-dua library peta memerlukan sambungan internet untuk muat turun tile.
+
+Tile layer peta Leaflet berbeza ikut page, disesuaikan dengan kegunaan:
+
+- `/dashboard` — [OpenTopoMap](https://opentopomap.org) (contour lines &amp; shading terrain, sesuai untuk konteks pendakian). `maxZoom` dihadkan pada 17 ikut had basemap.
+- `/coverage-net` — [CartoDB Voyager](https://carto.com/attributions) (basemap minimal/pale supaya bulatan radius liputan &amp; marker status menara lebih menonjol). `maxZoom` 20.
 
 ## Ketahui Lebih Lanjut
 
