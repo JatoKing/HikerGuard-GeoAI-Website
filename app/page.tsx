@@ -524,7 +524,8 @@ export default function HeroSection() {
               </label>
               <button
                 type="submit"
-                className="mt-2 rounded px-4 py-2.5 text-sm font-medium transition-transform hover:-translate-y-px"
+                disabled
+                className="mt-2 cursor-not-allowed rounded px-4 py-2.5 text-sm font-medium opacity-50"
                 style={{ backgroundColor: '#D9A441', color: '#201604' }}
               >
                 Sign in
